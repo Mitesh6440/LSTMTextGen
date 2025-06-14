@@ -3,12 +3,8 @@ import pickle
 import json
 import numpy as np
 from flask import Flask, render_template, request, jsonify
-import tensorflow as tf
 
 app = Flask(__name__)
-
-# Enable XLA compilation
-tf.config.optimizer.set_jit(True)
 
 # Load model with optimizations
 model = load_model('model1.keras')
